@@ -1,7 +1,12 @@
 pipeline {
     agent any
 
-    // Optional: Uncomment and set these if you plan to use AWS later
+    // Skip the automatic checkout to avoid empty repository URL errors
+    options {
+        skipDefaultCheckout()
+    }
+
+    // Optional: AWS environment variables for future Docker deployment
     // environment {
     //     AWS_REGION = 'us-east-1'
     //     ECR_REPO = 'my-repo'
